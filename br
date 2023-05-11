@@ -117,7 +117,7 @@ UICorner_7.Parent = PLAYERESP
 
 -- Scripts:
 
-local function KOQDC_fake_script() -- LegChestEnable.LocalScript 
+local function HBHDKGB_fake_script() -- LegChestEnable.LocalScript 
 	local script = Instance.new('LocalScript', LegChestEnable)
 
 	local btn = script.Parent
@@ -147,8 +147,8 @@ local function KOQDC_fake_script() -- LegChestEnable.LocalScript
 		end
 	end)
 end
-coroutine.wrap(KOQDC_fake_script)()
-local function YPIIK_fake_script() -- WALKSPEED.LocalScript 
+coroutine.wrap(HBHDKGB_fake_script)()
+local function WLGWZZ_fake_script() -- WALKSPEED.LocalScript 
 	local script = Instance.new('LocalScript', WALKSPEED)
 
 	local e = script.Parent
@@ -176,8 +176,8 @@ local function YPIIK_fake_script() -- WALKSPEED.LocalScript
 	end)
 	
 end
-coroutine.wrap(YPIIK_fake_script)()
-local function JPZLOQ_fake_script() -- INFJUMP.LocalScript 
+coroutine.wrap(WLGWZZ_fake_script)()
+local function YCVP_fake_script() -- INFJUMP.LocalScript 
 	local script = Instance.new('LocalScript', INFJUMP)
 
 	local inf = script.Parent
@@ -205,10 +205,14 @@ local function JPZLOQ_fake_script() -- INFJUMP.LocalScript
 	
 	end)
 end
-coroutine.wrap(JPZLOQ_fake_script)()
-local function OMQOJ_fake_script() -- POTATOGRAPHICS.LocalScript 
+coroutine.wrap(YCVP_fake_script)()
+local function PGLIHQ_fake_script() -- POTATOGRAPHICS.LocalScript 
 	local script = Instance.new('LocalScript', POTATOGRAPHICS)
 
+	local btn = script.Parent
+	btn.MouseButton1Click:Connect(function()
+	
+	print("POTATO ENABLED")
 	local decalsyeeted = true
 	local g = game
 	local w = g.Workspace
@@ -245,10 +249,11 @@ local function OMQOJ_fake_script() -- POTATOGRAPHICS.LocalScript
 		if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
 			e.Enabled = false
 		end
-	end
+		end
+		end)
 end
-coroutine.wrap(OMQOJ_fake_script)()
-local function TNCI_fake_script() -- FLYY.LocalScript 
+coroutine.wrap(PGLIHQ_fake_script)()
+local function RUZG_fake_script() -- FLYY.LocalScript 
 	local script = Instance.new('LocalScript', FLYY)
 
 	repeat wait() 
@@ -333,8 +338,8 @@ local function TNCI_fake_script() -- FLYY.LocalScript
 	Fly()
 	
 end
-coroutine.wrap(TNCI_fake_script)()
-local function WSQB_fake_script() -- PLAYERESP.LocalScript 
+coroutine.wrap(RUZG_fake_script)()
+local function UCLPLSO_fake_script() -- PLAYERESP.LocalScript 
 	local script = Instance.new('LocalScript', PLAYERESP)
 
 	local btn = script.Parent
@@ -353,8 +358,8 @@ local function WSQB_fake_script() -- PLAYERESP.LocalScript
 	
 	end)
 end
-coroutine.wrap(WSQB_fake_script)()
-local function CODPTF_fake_script() -- Frame.LocalScript 
+coroutine.wrap(UCLPLSO_fake_script)()
+local function GDCJA_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	script.Parent.Active = true
@@ -362,4 +367,4 @@ local function CODPTF_fake_script() -- Frame.LocalScript
 	
 	
 end
-coroutine.wrap(CODPTF_fake_script)()
+coroutine.wrap(GDCJA_fake_script)()
