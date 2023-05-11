@@ -1,0 +1,365 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local LegChestEnable = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local WALKSPEED = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local INFJUMP = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local POTATOGRAPHICS = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local FLYY = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local PLAYERESP = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Frame.Position = UDim2.new(0.139307246, 0, 0.115131579, 0)
+Frame.Size = UDim2.new(0, 477, 0, 221)
+
+LegChestEnable.Name = "LegChestEnable"
+LegChestEnable.Parent = Frame
+LegChestEnable.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LegChestEnable.Position = UDim2.new(0.465408802, 0, 0.085972853, 0)
+LegChestEnable.Size = UDim2.new(0, 200, 0, 50)
+LegChestEnable.Font = Enum.Font.SourceSans
+LegChestEnable.Text = "CHEST ESP (LEG)"
+LegChestEnable.TextColor3 = Color3.fromRGB(0, 0, 0)
+LegChestEnable.TextScaled = true
+LegChestEnable.TextSize = 14.000
+LegChestEnable.TextWrapped = true
+
+UICorner.Parent = LegChestEnable
+
+UICorner_2.Parent = Frame
+
+WALKSPEED.Name = "WALKSPEED"
+WALKSPEED.Parent = Frame
+WALKSPEED.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WALKSPEED.Position = UDim2.new(0, 0, 0.443438917, 0)
+WALKSPEED.Size = UDim2.new(0, 200, 0, 50)
+WALKSPEED.Font = Enum.Font.SourceSans
+WALKSPEED.Text = "WALKSPEEDF"
+WALKSPEED.TextColor3 = Color3.fromRGB(0, 0, 0)
+WALKSPEED.TextScaled = true
+WALKSPEED.TextSize = 14.000
+WALKSPEED.TextWrapped = true
+
+UICorner_3.Parent = WALKSPEED
+
+INFJUMP.Name = "INFJUMP"
+INFJUMP.Parent = Frame
+INFJUMP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+INFJUMP.Position = UDim2.new(-1.86264515e-08, 0, 0.0859728456, 0)
+INFJUMP.Size = UDim2.new(0, 200, 0, 50)
+INFJUMP.Font = Enum.Font.SourceSans
+INFJUMP.Text = "INF JUMP"
+INFJUMP.TextColor3 = Color3.fromRGB(0, 0, 0)
+INFJUMP.TextScaled = true
+INFJUMP.TextSize = 14.000
+INFJUMP.TextWrapped = true
+
+UICorner_4.Parent = INFJUMP
+
+POTATOGRAPHICS.Name = "POTATOGRAPHICS"
+POTATOGRAPHICS.Parent = Frame
+POTATOGRAPHICS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+POTATOGRAPHICS.Position = UDim2.new(0.507337511, 0, 0.76018101, 0)
+POTATOGRAPHICS.Size = UDim2.new(0, 160, 0, 38)
+POTATOGRAPHICS.Font = Enum.Font.SourceSans
+POTATOGRAPHICS.Text = "POTATO"
+POTATOGRAPHICS.TextColor3 = Color3.fromRGB(0, 0, 0)
+POTATOGRAPHICS.TextScaled = true
+POTATOGRAPHICS.TextSize = 14.000
+POTATOGRAPHICS.TextWrapped = true
+
+UICorner_5.Parent = POTATOGRAPHICS
+
+FLYY.Name = "FLY (Y)"
+FLYY.Parent = Frame
+FLYY.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FLYY.Position = UDim2.new(0.465408802, 0, 0.443438917, 0)
+FLYY.Size = UDim2.new(0, 200, 0, 50)
+FLYY.Font = Enum.Font.SourceSans
+FLYY.Text = "FLY (Y)"
+FLYY.TextColor3 = Color3.fromRGB(0, 0, 0)
+FLYY.TextScaled = true
+FLYY.TextSize = 14.000
+FLYY.TextWrapped = true
+
+UICorner_6.Parent = FLYY
+
+PLAYERESP.Name = "PLAYER ESP"
+PLAYERESP.Parent = Frame
+PLAYERESP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PLAYERESP.Position = UDim2.new(0.0419287086, 0, 0.76018101, 0)
+PLAYERESP.Size = UDim2.new(0, 160, 0, 38)
+PLAYERESP.Font = Enum.Font.SourceSans
+PLAYERESP.Text = "PLAYER ESP"
+PLAYERESP.TextColor3 = Color3.fromRGB(0, 0, 0)
+PLAYERESP.TextScaled = true
+PLAYERESP.TextSize = 14.000
+PLAYERESP.TextWrapped = true
+
+UICorner_7.Parent = PLAYERESP
+
+-- Scripts:
+
+local function KOQDC_fake_script() -- LegChestEnable.LocalScript 
+	local script = Instance.new('LocalScript', LegChestEnable)
+
+	local btn = script.Parent
+	btn.MouseButton1Click:Connect(function()
+	print("LEG CHEST ESP ENABLED.")
+		local EspFolder2 = Instance.new("Folder",game.CoreGui)
+		EspFolder2.Name = "ChestEspFolder"
+		modelsWithEsp = {} 
+		while wait() do
+			wait()
+			for i,v in pairs(game:GetService("Workspace").Effects:GetChildren()) do
+				if v.ClassName == "Model" and not modelsWithEsp[v] then 
+					local Chest = v:FindFirstChildOfClass("MeshPart")
+					if Chest and Chest.MeshId == "rbxassetid://10798559852" then
+						local esp = Instance.new("BoxHandleAdornment",EspFolder2)
+						esp.Adornee = v
+						esp.ZIndex = 0
+						esp.Size = Vector3.new(4, 5, 1)
+						esp.Transparency = 0.65
+						esp.Color3 = Color3.fromRGB(255, 35, 244)
+						esp.AlwaysOnTop = true
+						esp.Name = "EspBox"
+						modelsWithEsp[v] = true 
+					end
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(KOQDC_fake_script)()
+local function YPIIK_fake_script() -- WALKSPEED.LocalScript 
+	local script = Instance.new('LocalScript', WALKSPEED)
+
+	local e = script.Parent
+	
+	e.MouseButton1Click:Connect(function()
+	print("WALKSPEED ENABLED.")
+		local Player = game:GetService'Players'.LocalPlayer;
+		local UIS = game:GetService'UserInputService';
+		UIS.InputBegan:connect(function(UserInput)
+			if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.LeftShift then
+				_G.Running = true
+				while wait(0.005) and _G.Running == true do
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1.25
+				end
+			end
+		end)
+	
+		UIS.InputEnded:connect(function(UserInput)
+			if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.LeftShift then
+				_G.Running = false
+	
+			end
+		end)
+	
+	end)
+	
+end
+coroutine.wrap(YPIIK_fake_script)()
+local function JPZLOQ_fake_script() -- INFJUMP.LocalScript 
+	local script = Instance.new('LocalScript', INFJUMP)
+
+	local inf = script.Parent
+	inf.MouseButton1Click:Connect(function()
+		print("INFJUMP ENABLED")
+		local Player = game:GetService'Players'.LocalPlayer;
+		local UIS = game:GetService'UserInputService';
+	
+		_G.JumpHeight = 50;
+	
+		function Action(Object, Function) if Object ~= nil then Function(Object); end end
+	
+		UIS.InputBegan:connect(function(UserInput)
+			if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+				Action(Player.Character.Humanoid, function(self)
+					if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+						Action(self.Parent.HumanoidRootPart, function(self)
+							self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+						end)
+					end
+				end)
+			end
+		end)
+	
+	
+	end)
+end
+coroutine.wrap(JPZLOQ_fake_script)()
+local function OMQOJ_fake_script() -- POTATOGRAPHICS.LocalScript 
+	local script = Instance.new('LocalScript', POTATOGRAPHICS)
+
+	local decalsyeeted = true
+	local g = game
+	local w = g.Workspace
+	local l = g.Lighting
+	local t = w.Terrain
+	t.WaterWaveSize = 0
+	t.WaterWaveSpeed = 0
+	t.WaterReflectance = 0
+	t.WaterTransparency = 0
+	l.GlobalShadows = false
+	l.FogEnd = 9e9
+	l.Brightness = 0
+	settings().Rendering.QualityLevel = "Level01"
+	for i, v in pairs(g:GetDescendants()) do
+		if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+			v.Material = "Plastic"
+			v.Reflectance = 0
+		elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+			v.Transparency = 1
+		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+			v.Lifetime = NumberRange.new(0)
+		elseif v:IsA("Explosion") then
+			v.BlastPressure = 1
+			v.BlastRadius = 1
+		elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
+			v.Enabled = false
+		elseif v:IsA("MeshPart") then
+			v.Material = "Plastic"
+			v.Reflectance = 0
+			v.TextureID = 10385902758728957
+		end
+	end
+	for i, e in pairs(l:GetChildren()) do
+		if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+			e.Enabled = false
+		end
+	end
+end
+coroutine.wrap(OMQOJ_fake_script)()
+local function TNCI_fake_script() -- FLYY.LocalScript 
+	local script = Instance.new('LocalScript', FLYY)
+
+	repeat wait() 
+	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+	local mouse = game.Players.LocalPlayer:GetMouse() 
+	repeat wait() until mouse
+	local plr = game.Players.LocalPlayer 
+	local torso = plr.Character.Head 
+	local flying = false
+	local deb = true 
+	local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+	local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+	local maxspeed = 70 -- speed
+	local speed = 70 -- speed
+	
+	function Fly() 
+		local bg = Instance.new("BodyGyro", torso) 
+		bg.P = 9e4 
+		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+		bg.cframe = torso.CFrame 
+		local bv = Instance.new("BodyVelocity", torso) 
+		bv.velocity = Vector3.new(0,0.1,0) 
+		bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+		repeat wait() 
+			plr.Character.Humanoid.PlatformStand = true 
+			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+				speed = speed+.5+(speed/maxspeed) 
+				if speed > maxspeed then 
+					speed = maxspeed 
+				end 
+			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+				speed = speed-1 
+				if speed < 0 then 
+					speed = 0 
+				end 
+			end 
+			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+			else 
+				bv.velocity = Vector3.new(0,0.1,0) 
+			end 
+			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0) 
+		until not flying 
+		ctrl = {f = 0, b = 0, l = 0, r = 0} 
+		lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+		speed = 0 
+		bg:Destroy() 
+		bv:Destroy() 
+		plr.Character.Humanoid.PlatformStand = false 
+	end 
+	mouse.KeyDown:connect(function(key) 
+		if key:lower() == "y" then -- toggle 
+			if flying then flying = false 
+			else 
+				flying = true 
+				Fly() 
+			end 
+		elseif key:lower() == "w" then 
+			ctrl.f = 1 
+		elseif key:lower() == "s" then 
+			ctrl.b = -1 
+		elseif key:lower() == "a" then 
+			ctrl.l = -1 
+		elseif key:lower() == "d" then 
+			ctrl.r = 1 
+		end 
+	end) 
+	mouse.KeyUp:connect(function(key) 
+		if key:lower() == "w" then 
+			ctrl.f = 0 
+		elseif key:lower() == "s" then 
+			ctrl.b = 0 
+		elseif key:lower() == "a" then 
+			ctrl.l = 0 
+		elseif key:lower() == "d" then 
+			ctrl.r = 0 
+		end 
+	end)
+	Fly()
+	
+end
+coroutine.wrap(TNCI_fake_script)()
+local function WSQB_fake_script() -- PLAYERESP.LocalScript 
+	local script = Instance.new('LocalScript', PLAYERESP)
+
+	local btn = script.Parent
+	btn.MouseButton1Click:Connect(function()
+		local players = game.Players:GetPlayers()
+	
+		for i,v in pairs(players) do
+			local esp = Instance.new("Highlight")
+			esp.Name = v.Name
+			esp.FillTransparency = 50
+			esp.FillColor = Color3.new(1, 0.666667, 0)
+			esp.OutlineColor = Color3.new(1, 0.333333, 1)
+			esp.OutlineTransparency = 0
+			esp.Parent = v.Character
+		end
+	
+	end)
+end
+coroutine.wrap(WSQB_fake_script)()
+local function CODPTF_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+	
+	
+end
+coroutine.wrap(CODPTF_fake_script)()
