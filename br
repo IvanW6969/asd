@@ -351,7 +351,7 @@ local function UCLPLSO_fake_script() -- PLAYERESP.LocalScript
 			esp.Name = v.Name
 			esp.FillTransparency = 50
 			esp.FillColor = Color3.new(1, 0.666667, 0)
-			esp.OutlineColor = Color3.new(1, 0.333333, 1)
+			esp.OutlineColor = Color3.new(27, 71, 165)
 			esp.OutlineTransparency = 0
 			esp.Parent = v.Character
 		end
